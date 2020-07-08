@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import axios from "axios";
+import Search from "./components/Search";
 
 class App extends React.Component {
   componentDidMount() {
@@ -31,7 +32,9 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">Our App</header>
         <div className="featuredPost">
-          <p>Search Bar</p>
+          <div>
+            <Search />
+          </div>
         </div>
         <div className="spotifyPlayer">
           <p>Spotify player here</p>
