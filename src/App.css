@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background: url("components/images/banner.jpg") bottom no-repeat;
   padding: 10%;
   display: flex;
   flex-direction: column;
