@@ -6,6 +6,7 @@ class Search extends Component {
   state = {
     searchValue: "",
     songs: [],
+    data: null,
   };
 
   handleOnChange = (event) => {
@@ -29,6 +30,9 @@ class Search extends Component {
     })
       .then((response) => {
         console.log(response);
+        this.setState({
+          data: response.data,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -37,6 +41,15 @@ class Search extends Component {
 
   handleSearch = () => {
     this.makeApiCall(this.state.searchValue);
+  };
+
+  returnSongs = () => {
+    // this.state.data?.data[i].preview
+    let arr = [];
+    arr = this.state.data?.data.map(function (song) {
+      return <audio className="songs" src={song.preview} controls></audio>;
+    });
+    return arr;
   };
 
   render() {
@@ -51,6 +64,7 @@ class Search extends Component {
           value={this.state.searchValue}
         />
         <button onClick={this.handleSearch}>Search</button>
+        <div>{this.returnSongs()}</div>
       </div>
     );
   }
