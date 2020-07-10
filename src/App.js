@@ -30,20 +30,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">Our App</header>
+        <header className="App-header">
+          <span>Sound Space</span>
+        </header>
         <div className="featuredPost">
           <div>
             <Search />
           </div>
-        </div>
-        <div className="spotifyPlayer">
-          <p>Spotify player here</p>
-        </div>
-        <div className="otherPosts">
-          <p>Other posts here</p>
-        </div>
-        <div className="footer">
-          <p>Footer here</p>
         </div>
       </div>
     );
