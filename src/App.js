@@ -2,7 +2,9 @@ import React from "react";
 import "./App.css";
 import axios from "axios";
 import Search from "./components/Search";
-
+import { Switch, Link, Route } from "react-router-dom";
+import Random from "./components/random";
+import Header from "./components/header";
 class App extends React.Component {
   componentDidMount() {
     axios({
@@ -30,13 +32,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Header />
+        <Switch>
+          <Route path="/random" component={Random} />
+        </Switch>
         <header className="App-header">
           <span>Sound Space</span>
         </header>
-        <div className="featuredPost">
-          <div>
-            <Search />
-          </div>
+        <div>
+          <Search />
         </div>
       </div>
     );
