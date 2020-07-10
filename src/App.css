@@ -1,16 +1,29 @@
+body {
+  overflow-x: hidden;
+}
+
 .App {
+  width: 100vw;
   text-align: center;
 }
 
 .App-header {
-  background: url("components/images/banner.jpg") bottom no-repeat;
-  padding: 10%;
+  background: url("components/images/banner.jpg") center no-repeat;
   display: flex;
+  font-size: 3em;
+  width: 100%;
+  height: 50vh;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 2 #000;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: "Modak", cursive;
+}
+
+.App-header span {
+  margin-top: 3%;
 }
 
 .App-link {

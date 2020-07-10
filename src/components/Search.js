@@ -7,6 +7,9 @@ class Search extends Component {
     searchValue: "",
     songs: [],
     data: null,
+    show: false,
+    showPrev: false,
+    index: 25,
   };
 
   handleOnChange = (event) => {
@@ -25,7 +28,7 @@ class Search extends Component {
       },
       params: {
         q: searchInput,
-        index: 25,
+        index: this.state.index,
       },
     })
       .then((response) => {
@@ -41,30 +44,96 @@ class Search extends Component {
 
   handleSearch = () => {
     this.makeApiCall(this.state.searchValue);
+    this.setState({ show: true });
+  };
+
+  showPrev = () => {
+    this.setState({ showPrev: true });
   };
 
   returnSongs = () => {
     // this.state.data?.data[i].preview
     let arr = [];
     arr = this.state.data?.data.map(function (song) {
-      return <audio className="songs" src={song.preview} controls></audio>;
+      return (
+        <div className="search-container">
+          <p className="song-title">
+            {song.artist.name}-{song.title}
+          </p>
+          <br></br>
+          <audio className="songs" src={song.preview} controls></audio>
+          <div>
+            <a
+              className="full-track"
+              rel="noopener noreferrer"
+              target="_blank"
+              href={song.link}
+            >
+              Click Here For Full Track
+            </a>
+          </div>
+        </div>
+      );
     });
     return arr;
   };
 
   render() {
     return (
-      <div>
-        <h1>Welcome to the sounds search</h1>
+      <div className="search">
+        <p className="header">Search Our Sounds</p>
         <input
           name="text"
           type="text"
           placeholder="Search"
           onChange={(event) => this.handleOnChange(event)}
           value={this.state.searchValue}
-        />
+        />{" "}
         <button onClick={this.handleSearch}>Search</button>
-        <div>{this.returnSongs()}</div>
+        <br></br>
+        <div className="nextPrevBtns">
+          {this.state.show && (
+            <button
+              onClick={this.showPrev}
+              onChange={(event) =>
+                this.setState({ index: this.state.index + 25 })
+              }
+            >
+              Next
+            </button>
+          )}
+          {this.state.showPrev && (
+            <button
+              onChange={(event) =>
+                this.setState({ index: this.state.index - 25 })
+              }
+            >
+              Previous
+            </button>
+          )}
+        </div>
+        <div id="songs">{this.returnSongs()}</div>
+        <div className="nextPrevBtns">
+          {this.state.show && (
+            <button
+              onClick={this.showPrev}
+              onChange={(event) =>
+                this.setState({ index: this.state.index + 25 })
+              }
+            >
+              Next
+            </button>
+          )}
+          {this.state.showPrev && (
+            <button
+              onChange={(event) =>
+                this.setState({ index: this.state.index - 25 })
+              }
+            >
+              Previous
+            </button>
+          )}
+        </div>
       </div>
     );
   }
