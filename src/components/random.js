@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import axios from "axios";
-class Random extends Component { 
-    randomLetter() {
-        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-   var charactersLength = characters.length;
-    return characters.charAt(Math.floor(Math.random()* charactersLength));
-  
+class Random extends Component {
+  state = {
+    data: null,
+  };
 
-
-}
-componentDidMount() {
-
-    let letter = this.randomLetter()
+  randomLetter() {
+    var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    var charactersLength = characters.length;
+    return characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  componentDidMount() {
+    let letter = this.randomLetter();
     axios({
       method: "GET",
       url: "https://deezerdevs-deezer.p.rapidapi.com/search",
@@ -22,25 +22,33 @@ componentDidMount() {
         useQueryString: true,
       },
       params: {
-        q: letter, 
-        index: 25, 
+        q: letter,
+        index: 25,
       },
     })
       .then((response) => {
         console.log(response);
+        this.setState({
+            data:response.data
+        })
       })
       .catch((error) => {
         console.log(error);
       });
   }
-   
-    render() { 
-        return (
-            <div>
-                Done
-            </div>
-        );
-    }
+
+  returnSongs = () => {
+    // this.state.data?.data[i].preview
+    let arr = [];
+    arr = this.state.data?.data.map(function (song) {
+      return <audio className="random-songs" src={song.preview} controls></audio>;
+    });
+    return arr;
+  };
+
+  render() {
+    return <div>{this.returnSongs()}</div>;
+  }
 }
 
 export default Random;
