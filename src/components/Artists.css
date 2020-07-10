@@ -1,0 +1,19 @@
+.artists a {
+  cursor: pointer;
+  display: block;
+}
+.artists p {
+  color: #4286f4;
+  font-size: 25px;
+  font-family: "Modak", cursive;
+}
+.artists {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.artists img {
+  width: 103%;
+  height: auto;
+}

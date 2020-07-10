@@ -4,9 +4,9 @@ import axios from "axios";
 import Search from "./components/Search";
 import { Switch, Link, Route } from "react-router-dom";
 import Random from "./components/random";
-import Artists from "./components/Artists.js";
 import Header from "./components/header";
 import { BrowserRouter as Router } from "react-router-dom";
+import Artists from "./components/Artists.js";
 class App extends React.Component {
   componentDidMount() {
     axios({

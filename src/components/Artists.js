@@ -1,30 +1,37 @@
-import React, { Component } from "react";
 import axios from "axios";
+import "./Artists.css";
+import React, { Component } from "react";
+
 class Artists extends Component {
-  componentDidMount() {
-    axios({
-      method: "GET",
-      url: "https://deezerdevs-deezer.p.rapidapi.com/artist/%7Bid%7D",
-      headers: {
-        "content-type": "application/octet-stream",
-        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-        "x-rapidapi-key": "3e5b90cb4emsh4609cea4ac6308dp1b5ce5jsn1be3f148de5c",
-        useQueryString: true,
-      },
-    })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-  hey = () => {
-    console.log(this.state.artist);
+  state = {
+    topArtists: [],
   };
+  async componentDidMount() {
+    let topArtists = await axios.get(
+      "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/artists"
+    );
+    console.log(topArtists);
+    this.setState({ topArtists: topArtists.data.data });
+  }
+  showArtists = () => {
+    return this.state.topArtists.map((eachArtist) => {
+      return (
+        <div>
+          <p>{eachArtist.name}</p>
+          <a href={eachArtist.link}>
+            <img
+              className="artist-img"
+              alt={eachArtist.name}
+              src={eachArtist.picture}
+            ></img>
+          </a>
+        </div>
+      );
+    });
+  };
+
   render() {
-    this.hey();
-    return <div></div>;
+    return <div className="artists">{this.showArtists()}</div>;
   }
 }
 

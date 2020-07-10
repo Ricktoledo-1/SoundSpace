@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./random.css";
 class Random extends Component {
   state = {
     data: null,
@@ -29,8 +30,8 @@ class Random extends Component {
       .then((response) => {
         console.log(response);
         this.setState({
-            data:response.data
-        })
+          data: response.data,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -41,7 +42,16 @@ class Random extends Component {
     // this.state.data?.data[i].preview
     let arr = [];
     arr = this.state.data?.data.map(function (song) {
-      return <audio className="random-songs" src={song.preview} controls></audio>;
+      return (
+        <div className="random-songs">
+          <div>
+            <p className="">
+              {song.title} - {song.artist.name}
+            </p>
+            <audio className="random-song" src={song.preview} controls></audio>
+          </div>
+        </div>
+      );
     });
     return arr;
   };

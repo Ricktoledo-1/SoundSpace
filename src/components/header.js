@@ -9,7 +9,7 @@ class Header extends Component {
         <br />
         <Link to="/components/random">Discovery</Link>
         <br />
-        <Link to="/components/Artists">Artists</Link>
+        <Link to="./components/Artists">Top-Artists</Link>
       </div>
     );
   }
