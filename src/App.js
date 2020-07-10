@@ -4,7 +4,9 @@ import axios from "axios";
 import Search from "./components/Search";
 import { Switch, Link, Route } from "react-router-dom";
 import Random from "./components/random";
+import Artists from "./components/Artists.js";
 import Header from "./components/header";
+import { BrowserRouter as Router } from "react-router-dom";
 class App extends React.Component {
   componentDidMount() {
     axios({
@@ -32,16 +34,17 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Switch>
-          <Route path="/random" component={Random} />
-        </Switch>
-        <header className="App-header">
-          <span>Sound Space</span>
-        </header>
-        <div>
-          <Search />
-        </div>
+        <Router>
+          <Header />
+          <header className="App-header">
+            <span>Sound Space</span>
+          </header>
+          <Switch>
+            <Route exact component={Random} path="/components/random" />
+            <Route exact component={Artists} path="/components/Artists" />
+            <Route exact component={Search} path="/" />
+          </Switch>
+        </Router>
       </div>
     );
   }

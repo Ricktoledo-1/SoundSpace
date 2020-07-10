@@ -9,14 +9,14 @@ class Search extends Component {
     data: null,
     show: false,
     showPrev: false,
-    index: 25,
+    index: 0,
   };
 
   handleOnChange = (event) => {
     this.setState({ searchValue: event.target.value });
   };
 
-  makeApiCall = (searchInput) => {
+  makeApiCall = () => {
     axios({
       method: "GET",
       url: "https://deezerdevs-deezer.p.rapidapi.com/search",
@@ -27,7 +27,7 @@ class Search extends Component {
         useQueryString: true,
       },
       params: {
-        q: searchInput,
+        q: this.state.searchValue,
         index: this.state.index,
       },
     })
@@ -43,12 +43,8 @@ class Search extends Component {
   };
 
   handleSearch = () => {
-    this.makeApiCall(this.state.searchValue);
+    this.makeApiCall();
     this.setState({ show: true });
-  };
-
-  showPrev = () => {
-    this.setState({ showPrev: true });
   };
 
   returnSongs = () => {
@@ -58,7 +54,7 @@ class Search extends Component {
       return (
         <div className="search-container">
           <p className="song-title">
-            {song.artist.name}-{song.title}
+            {song.artist.name} - {song.title}
           </p>
           <br></br>
           <audio className="songs" src={song.preview} controls></audio>
@@ -94,21 +90,26 @@ class Search extends Component {
         <div className="nextPrevBtns">
           {this.state.show && (
             <button
-              onClick={this.showPrev}
-              onChange={(event) =>
-                this.setState({ index: this.state.index + 25 })
+              onClick={(event) =>
+                this.setState(
+                  { index: this.state.index + 25 },
+                  this.handleSearch
+                )
               }
             >
               Next
             </button>
           )}
-          {this.state.showPrev && (
+          {this.state.index > 0 && (
             <button
-              onChange={(event) =>
-                this.setState({ index: this.state.index - 25 })
+              onClick={(event) =>
+                this.setState(
+                  { index: this.state.index - 25 },
+                  this.handleSearch
+                )
               }
             >
-              Previous
+              Prev
             </button>
           )}
         </div>
@@ -116,21 +117,26 @@ class Search extends Component {
         <div className="nextPrevBtns">
           {this.state.show && (
             <button
-              onClick={this.showPrev}
-              onChange={(event) =>
-                this.setState({ index: this.state.index + 25 })
+              onClick={(event) =>
+                this.setState(
+                  { index: this.state.index + 25 },
+                  this.handleSearch
+                )
               }
             >
               Next
             </button>
           )}
-          {this.state.showPrev && (
+          {this.state.index > 0 && (
             <button
-              onChange={(event) =>
-                this.setState({ index: this.state.index - 25 })
+              onClick={(event) =>
+                this.setState(
+                  { index: this.state.index - 25 },
+                  this.handleSearch
+                )
               }
             >
-              Previous
+              Prev
             </button>
           )}
         </div>

@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 class Header extends Component {
   render() {
     return (
-      <div>
-        <Link to="">Home</Link>
+      <div className="nav">
+        <Link to="/">Home</Link>
         <br />
-        <Link to="/random">Random songs</Link>
+        <Link to="/components/random">Discovery</Link>
         <br />
-        <Link to="">Alphabetical</Link>
+        <Link to="/components/Artists">Artists</Link>
       </div>
     );
   }
