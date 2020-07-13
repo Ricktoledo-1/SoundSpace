@@ -10,6 +10,8 @@ class Header extends Component {
         <Link to="/components/random">Discovery</Link>
         <br />
         <Link to="./components/Artists">Top-Artists</Link>
+        <br />
+        <Link to="./components/Videos">Music-Videos</Link>
       </div>
     );
   }
