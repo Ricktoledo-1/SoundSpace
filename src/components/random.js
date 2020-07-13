@@ -44,11 +44,22 @@ class Random extends Component {
     arr = this.state.data?.data.map(function (song) {
       return (
         <div className="random-songs">
-          <div>
-            <p className="">
+          <div className="random-song">
+            <p className="song-title">
               {song.title} - {song.artist.name}
             </p>
-            <audio className="random-song" src={song.preview} controls></audio>
+            <audio className="random" src={song.preview} controls></audio>
+            <div>
+              <a
+                className="random-track"
+                rel="noopener noreferrer"
+                target="_blank"
+                href={song.link}
+              >
+                Click Here For Full Track
+              </a>
+            </div>
+            <br></br>
           </div>
         </div>
       );
@@ -57,7 +68,12 @@ class Random extends Component {
   };
 
   render() {
-    return <div>{this.returnSongs()}</div>;
+    return (
+      <React.Fragment>
+        <p className="random-header">Your Random Song Discovery</p>
+        <div>{this.returnSongs()}</div>;
+      </React.Fragment>
+    );
   }
 }
 

@@ -3,17 +3,35 @@
   display: block;
 }
 .artists p {
-  color: #4286f4;
-  font-size: 25px;
+  color: #fff;
   font-family: "Modak", cursive;
+  font-size: 3em;
 }
 .artists {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-
+.artist-container {
+  background-color: #000;
+}
 .artists img {
   width: 103%;
   height: auto;
+}
+
+.artist-header {
+  color: #4286f4;
+  font-family: "Modak", cursive;
+  font-size: 4em;
+}
+
+.padding {
+  padding: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .artists img {
+    width: 90%;
+  }
 }

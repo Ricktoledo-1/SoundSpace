@@ -22,7 +22,7 @@ class Artists extends Component {
             <img
               className="artist-img"
               alt={eachArtist.name}
-              src={eachArtist.picture}
+              src={eachArtist.picture_big}
             ></img>
           </a>
         </div>
@@ -31,7 +31,16 @@ class Artists extends Component {
   };
 
   render() {
-    return <div className="artists">{this.showArtists()}</div>;
+    return (
+      <React.Fragment>
+        <div className="padding"></div>
+        <span className="artist-header">Top 10 Featured Artists</span>
+        <div className="padding"></div>
+        <div className="artist-container">
+          <div className="artists">{this.showArtists()}</div>;
+        </div>
+      </React.Fragment>
+    );
   }
 }
 
