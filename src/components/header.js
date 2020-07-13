@@ -7,9 +7,9 @@ class Header extends Component {
       <div>
         <Link to="">Home</Link>
         <br />
-        <Link to="/random">Random songs</Link>
-        <br />
-        <Link to="">Alphabetical</Link>
+        <Link to="">Genre</Link>
+     <br />
+        <Link to="/random"> Try something New</Link>
       </div>
     );
   }
