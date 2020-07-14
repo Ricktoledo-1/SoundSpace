@@ -8,6 +8,7 @@ class Videos extends Component {
     searchValue: "",
     show: false,
     data: null,
+    resultsPerPage: 0,
   };
 
   makeApiCall = () => {
@@ -19,6 +20,7 @@ class Videos extends Component {
         maxResult: 5,
         key: "AIzaSyAAxgogVPZfpkqGL2RxX_iE2zSLz6tP3I8",
         q: this.state.searchValue,
+        resultsPerPage: this.state.data?.pageInfo.resultsPerPage,
       },
     })
       .then((res) => {
@@ -76,6 +78,39 @@ class Videos extends Component {
         <button onClick={this.handleSearch}>Search</button>
         <br></br>
         <div id="videos">{this.returnVideos()}</div>
+        <br></br>
+        <div className="nextPrevBtns">
+          {this.state.show && (
+            <button
+              onClick={(event) =>
+                this.setState(
+                  {
+                    resultsPerPage:
+                      this.state.data?.pageInfo.resultsPerPage + 5,
+                  },
+                  this.handleSearch
+                )
+              }
+            >
+              Next
+            </button>
+          )}
+          {this.state.data?.pageInfo.resultsPerPage > 0 && (
+            <button
+              onClick={(event) =>
+                this.setState(
+                  {
+                    resultsPerPage:
+                      this.state.data?.pageInfo.resultsPerPage - 5,
+                  },
+                  this.handleSearch
+                )
+              }
+            >
+              Prev
+            </button>
+          )}
+        </div>
       </div>
     );
   }

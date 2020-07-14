@@ -24,7 +24,18 @@
   font-family: "Modak", cursive;
   font-size: 4em;
 }
-
+.random-btn {
+  padding: 12px 10px;
+  width: 30%;
+  border-radius: 4px;
+  background-color: #4286f4;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 22px;
+  margin: 10px 0px;
+  margin-right: 15px;
+}
 .random-track {
   text-decoration: none;
   text-align: center;

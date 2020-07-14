@@ -43,9 +43,9 @@ class App extends React.Component {
           <span>Sound Space</span>
         </header>
         <Switch>
-          <Route exact component={Random} path="/components/random" />
-          <Route exact component={Artists} path="/components/Artists" />
-          <Route exact component={Videos} path="/components/Videos" />
+          <Route exact component={Random} path="/random" />
+          <Route exact component={Artists} path="/Artists" />
+          <Route exact component={Videos} path="/Videos" />
           <Route exact component={Search} path="/" />
         </Switch>
       </div>

@@ -7,6 +7,9 @@
   font-family: "Modak", cursive;
   font-size: 3em;
 }
+.artistName {
+  background: #333;
+}
 .artists {
   display: flex;
   justify-content: space-around;

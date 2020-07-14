@@ -7,11 +7,11 @@ class Header extends Component {
       <div className="nav">
         <Link to="/">Home</Link>
         <br />
-        <Link to="/components/random">Discovery</Link>
+        <Link to="./random">Discovery</Link>
         <br />
-        <Link to="./components/Artists">Top-Artists</Link>
+        <Link to="./Artists">Top-Artists</Link>
         <br />
-        <Link to="./components/Videos">Music-Videos</Link>
+        <Link to="./Videos">Music-Videos</Link>
       </div>
     );
   }
