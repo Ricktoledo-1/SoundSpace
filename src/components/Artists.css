@@ -7,16 +7,14 @@
   font-family: "Modak", cursive;
   font-size: 3em;
 }
-.artistName {
-  background: #333;
-}
+
 .artists {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 .artist-container {
-  background-color: #000;
+  background-color: #4286f4;
 }
 .artists img {
   width: 103%;
