@@ -1,0 +1,51 @@
+.random-songs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.random-song {
+  border-radius: 4px;
+  border: 2px solid #000;
+  margin: 20px 0px;
+  background: #4286f4;
+  padding: 0px 5px;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+.random {
+  align-self: center;
+}
+
+.random-header {
+  color: #4286f4;
+  font-family: "Modak", cursive;
+  font-size: 4em;
+}
+
+.random-track {
+  text-decoration: none;
+  text-align: center;
+  font-family: "Modak", cursive;
+  color: #fff;
+  font-size: 16px;
+  position: relative;
+  top: 10px;
+  font-family: "Passion One", cursive;
+  text-transform: uppercase;
+}
+
+#para {
+  /* text-align: center; */
+   background-color: rgb(255, 2, 2);
+  border-bottom-color: gold;
+   
+}
+ 
+body {
+  background: url(./images/musicAPI2.gif) no-repeat cover !important;
+}
+
+

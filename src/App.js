@@ -5,6 +5,9 @@ import Search from "./components/Search";
 import { Switch, Link, Route } from "react-router-dom";
 import Random from "./components/random";
 import Header from "./components/header";
+import { BrowserRouter as Router } from "react-router-dom";
+import Artists from "./components/Artists.js";
+import gif1 from "./components/images/musicAPI2.gif"
 class App extends React.Component {
   componentDidMount() {
     axios({
@@ -32,16 +35,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Switch>
-          <Route path="/random" component={Random} />
-        </Switch>
-        <header className="App-header">
-          <span>Sound Space</span>
-        </header>
-        <div>
-          <Search />
-        </div>
+      {/* <img src ={gif1} alt ="sunny beach"/>  */}
+        <Router>
+          <Header />
+          <header className="App-header">
+            <span>Sound Space</span>
+          </header>
+          <Switch>
+            <Route exact component={Random} path="/components/random" />
+            <Route exact component={Artists} path="/components/Artists" />
+            <Route exact component={Search} path="/" />
+          </Switch>
+        </Router>
       </div>
     );
   }

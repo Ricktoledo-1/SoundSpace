@@ -1,0 +1,19 @@
+.nav {
+  background: #4286f4;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  font-size: 18px;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 10px;
+  font-family: "Passion One", cursive;
+  margin-top: 2px;
+}

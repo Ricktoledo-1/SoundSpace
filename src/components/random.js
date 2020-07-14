@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./random.css";
+import gif1 from "./images/musicAPI2.gif"
+
 class Random extends Component {
   state = {
     data: null,
@@ -29,8 +32,8 @@ class Random extends Component {
       .then((response) => {
         console.log(response);
         this.setState({
-            data:response.data
-        })
+          data: response.data,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -41,13 +44,40 @@ class Random extends Component {
     // this.state.data?.data[i].preview
     let arr = [];
     arr = this.state.data?.data.map(function (song) {
-      return <audio className="random-songs" src={song.preview} controls></audio>;
+      return (
+        <div className="random-songs">
+          <div className="random-song">
+            <p className="song-title">
+              {song.title} - {song.artist.name}
+            </p>
+            <audio className="random" src={song.preview} controls></audio>
+            <div>
+              <a
+                className="random-track"
+                rel="noopener noreferrer"
+                target="_blank"
+                href={song.link}
+              >
+                Click Here For Full Track
+              </a>
+            </div>
+            <br></br>
+          </div>
+        </div>
+      );
     });
     return arr;
   };
 
   render() {
-    return <div>{this.returnSongs()}</div>;
+    return (
+     
+      <React.Fragment>
+       {/* <img src ={gif1} alt ="sunny beach"/>  */}
+        <p className="random-header" id = "para">Your Random Song Discovery</p>
+        <div>{this.returnSongs()}</div>;
+      </React.Fragment>
+    );
   }
 }
 
