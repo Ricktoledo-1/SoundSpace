@@ -17,8 +17,10 @@ class Artists extends Component {
     return this.state.topArtists.map((eachArtist) => {
       return (
         <div>
-          <p>{eachArtist.name}</p>
-          <a href={eachArtist.link}>
+          <div className="artistName">
+            <p>{eachArtist.name}</p>
+          </div>
+          <a target="_blank" href={eachArtist.link}>
             <img
               className="artist-img"
               alt={eachArtist.name}
