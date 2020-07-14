@@ -18,7 +18,7 @@ class Videos extends Component {
       params: {
         part: "snippet",
         maxResult: 5,
-        key: "AIzaSyAAxgogVPZfpkqGL2RxX_iE2zSLz6tP3I8",
+        key: "AIzaSyC-TXkKsf2OJx1dCp6ssWm1PVTzVQLLrmc",
         q: this.state.searchValue,
         resultsPerPage: this.state.data?.pageInfo.resultsPerPage,
       },

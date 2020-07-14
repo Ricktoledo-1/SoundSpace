@@ -50,13 +50,14 @@
 
 #para {
   /* text-align: center; */
-   background-color: rgb(255, 2, 2);
+  background-color: rgb(255, 2, 2);
   border-bottom-color: gold;
-   
 }
- 
+
 body {
-  background: url(./images/musicAPI2.gif) no-repeat cover !important;
+  background-image: url("images/musicAPI2.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
-
-

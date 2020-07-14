@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./random.css";
-import gif1 from "./images/musicAPI2.gif"
+import gif1 from "./images/musicAPI2.gif";
 
 class Random extends Component {
   state = {
@@ -71,11 +71,11 @@ class Random extends Component {
 
   render() {
     return (
-     
       <React.Fragment>
-       {/* <img src ={gif1} alt ="sunny beach"/>  */}
-        <p className="random-header" id = "para">Your Random Song Discovery</p>
-        <p className="random-header">Your Random Song Discovery</p>
+        {/* <img src ={gif1} alt ="sunny beach"/>  */}
+        <p className="random-header" id="para">
+          Your Random Song Discovery
+        </p>
         <button
           className="random-btn"
           onClick={(event) => this.componentDidMount()}
