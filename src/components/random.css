@@ -56,7 +56,9 @@
 }
  
 body {
-  background: url(./images/musicAPI2.gif) no-repeat cover !important;
+  background-image: url(./images/fyEO.gif) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
