@@ -73,9 +73,7 @@ class Random extends Component {
     return (
       <React.Fragment>
         {/* <img src ={gif1} alt ="sunny beach"/>  */}
-        <p className="random-header" id="para">
-          Your Random Song Discovery
-        </p>
+        <p className="random-header para">Your Random Song Discovery</p>
         <button
           className="random-btn"
           onClick={(event) => this.componentDidMount()}

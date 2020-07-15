@@ -70,7 +70,7 @@ class Videos extends Component {
   render() {
     return (
       <div className="search">
-        <p className="header">Search Music Videos</p>
+        <p className="header para">Search Music Videos</p>
         <input
           name="text"
           type="text"
