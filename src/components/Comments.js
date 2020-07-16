@@ -58,7 +58,11 @@ class Comments extends Component {
         {this.state.show ? (
           <React.Fragment>
             <form className="comments-form" onSubmit={this.handleSubmit}>
-              <input type="text" onChange={this.handleChange}></input>
+              <input
+                id="textbox"
+                type="text"
+                onChange={this.handleChange}
+              ></input>
               <input id="submit" type="submit"></input>
             </form>
             {this.showComments()}

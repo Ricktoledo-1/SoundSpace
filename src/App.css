@@ -32,7 +32,7 @@ body {
 
 #submit {
   padding: 12px 10px;
-  width: 80%;
+  width: 30%;
   border-radius: 4px;
   background-color: #4286f4;
   color: #ffffff;
@@ -51,7 +51,7 @@ body {
   cursor: pointer;
   font-size: 14px;
   margin: 10px 0px;
-  margin-left: 20%;
+  margin-left: 26.5%;
 }
 .comment {
   background-color: #ccc;
@@ -80,5 +80,14 @@ body {
   .song-title {
     font-size: 14px;
     margin-top: 10px;
+  }
+  #submit {
+    width: 70%;
+  }
+  #comment-button {
+    width: 70%;
+  }
+  #textbox {
+    margin-left: 8%;
   }
 }
