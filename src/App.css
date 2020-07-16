@@ -1,6 +1,5 @@
 body {
   overflow-x: hidden;
-  
 }
 
 .App {
@@ -37,5 +36,12 @@ body {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .song-title {
+    font-size: 14px;
+    margin-top: 10px;
   }
 }

@@ -17,7 +17,7 @@
   text-align: center;
   width: 80%;
 }
-.search audio {
+audio {
   width: 50%;
   align-self: center;
 }
@@ -80,7 +80,7 @@
   margin: 20px 0px;
   position: relative;
   left: 23% !important;
-  background: #4286f4;
+  background: rgb(66, 134, 244, 0.85);
   padding: 0px 5px;
 }
 .nextPrevBtns {
@@ -107,9 +107,6 @@
 }
 
 @media only screen and (max-width: 320px) {
-  .search .song-title {
-    font-size: 20px;
-  }
   .search .header {
     font-size: 30px;
   }
