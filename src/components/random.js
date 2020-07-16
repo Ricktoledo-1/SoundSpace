@@ -61,9 +61,10 @@ class Random extends Component {
                 Click Here For Full Track
               </a>
             </div>
-            <br></br>
+            <div className="random-form">
+              <Comments {...song} />
+            </div>
           </div>
-          <Comments {...song} />
         </div>
       );
     });
