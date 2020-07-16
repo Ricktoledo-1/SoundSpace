@@ -80,7 +80,7 @@ audio {
   margin: 20px 0px;
   position: relative;
   left: 23% !important;
-  background: #4286f4;
+  background: rgb(66, 134, 244, 0.85);
   padding: 0px 5px;
 }
 .nextPrevBtns {

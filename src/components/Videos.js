@@ -87,7 +87,7 @@ class Videos extends Component {
                 this.setState(
                   {
                     resultsPerPage:
-                      this.state.data?.pageInfo.resultsPerPage + 5,
+                      this.state.data?.pageInfo.resultsPerPage + 25,
                   },
                   this.handleSearch
                 )
@@ -102,7 +102,7 @@ class Videos extends Component {
                 this.setState(
                   {
                     resultsPerPage:
-                      this.state.data?.pageInfo.resultsPerPage - 5,
+                      this.state.data?.pageInfo.resultsPerPage - 25,
                   },
                   this.handleSearch
                 )

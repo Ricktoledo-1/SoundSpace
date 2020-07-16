@@ -6,6 +6,12 @@ iframe {
   width: 560px;
   height: 315px;
 }
+
+.search-container a {
+  display: block;
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 600px) {
   iframe {
     width: 300px;
