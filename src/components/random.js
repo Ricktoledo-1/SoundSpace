@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./random.css";
-import gif1 from "./images/musicAPI2.gif"
+import gif1 from "./images/musicAPI2.gif";
 
 class Random extends Component {
   state = {
@@ -71,10 +71,9 @@ class Random extends Component {
 
   render() {
     return (
-     
-      <React.Fragment>
-       {/* <img src ={gif1} alt ="sunny beach"/>  */}
-        <p className="random-header" id = "para">Your Random Song Discovery</p>
+      <div id = "discovery">
+        {/* <img src ={gif1} alt ="sunny beach"/>  */}
+        <p className="random-header para">Your Random Song Discovery</p>
         
         <button
           className="random-btn"
@@ -83,7 +82,7 @@ class Random extends Component {
           Refresh
         </button>
         <div>{this.returnSongs()}</div>;
-      </React.Fragment>
+      </div>
     );
   }
 }

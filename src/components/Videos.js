@@ -17,8 +17,8 @@ class Videos extends Component {
       url: `https://www.googleapis.com/youtube/v3/search`,
       params: {
         part: "snippet",
-        maxResult: 5,
-        key: "AIzaSyAAxgogVPZfpkqGL2RxX_iE2zSLz6tP3I8",
+        maxResult: 25,
+        key: "AIzaSyC-TXkKsf2OJx1dCp6ssWm1PVTzVQLLrmc",
         q: this.state.searchValue,
         resultsPerPage: this.state.data?.pageInfo.resultsPerPage,
       },
@@ -46,28 +46,31 @@ class Videos extends Component {
   returnVideos = () => {
     let preUrl = "https://www.youtube.com/embed/";
     let arr = [];
-    arr = this.state.data?.items.map(function (video) {
-      return (
-        <div className="search-container">
-          <p className="song-title">{video.snippet.title}</p>
-          <iframe
-            width="560"
-            height="315"
-            src={(preUrl += video.id.videoId)}
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen="allowfullscreen"
-          ></iframe>
-        </div>
-      );
-    });
+    arr = this.state.data?.items
+      .map(function (video) {
+        if (video.id.videoId)
+          return (
+            <div className="search-container">
+              <p className="song-title">{video.snippet.title}</p>
+              <iframe
+                width="560"
+                height="315"
+                src={preUrl + video.id.videoId}
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen="allowfullscreen"
+              ></iframe>
+            </div>
+          );
+      })
+      .filter((e) => e);
     return arr;
   };
 
   render() {
     return (
       <div className="search">
-        <p className="header">Search Music Videos</p>
+        <p className="header para">Search Music Videos</p>
         <input
           name="text"
           type="text"

@@ -34,14 +34,14 @@ class Artists extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div id = "top-artist">
         <div className="padding"></div>
         <span className="artist-header">Top 10 Featured Artists</span>
         <div className="padding"></div>
         <div className="artist-container">
           <div className="artists">{this.showArtists()}</div>;
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

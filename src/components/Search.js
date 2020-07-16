@@ -77,7 +77,7 @@ class Search extends Component {
   render() {
     return (
       <div className="search">
-        <p className="header">Search Our Sounds</p>
+        <p className="header para">Search Our Sounds</p>
         <input
           name="text"
           type="text"
