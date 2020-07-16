@@ -107,9 +107,6 @@ audio {
 }
 
 @media only screen and (max-width: 320px) {
-  .search .song-title {
-    font-size: 20px;
-  }
   .search .header {
     font-size: 30px;
   }

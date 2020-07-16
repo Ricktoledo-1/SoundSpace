@@ -41,7 +41,7 @@ body {
 
 @media only screen and (max-width: 600px) {
   .song-title {
-    font-size: 12px !important;
+    font-size: 14px;
     margin-top: 10px;
   }
 }
