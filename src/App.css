@@ -40,12 +40,10 @@ body {
   cursor: pointer;
   font-size: 14px;
   margin: 10px 0px;
-  margin-right: 10%;
   border: 1px solid #000;
 }
 #comment-button {
   padding: 12px 10px;
-  width: 80%;
   border-radius: 4px;
   background-color: #4286f4;
   color: #ffffff;
