@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import "./Videos.css";
 console.log(process.env.REACT_APP_API_KEY);
 
 class Videos extends Component {
@@ -18,7 +18,7 @@ class Videos extends Component {
       params: {
         part: "snippet",
         maxResult: 25,
-        key: "AIzaSyC-TXkKsf2OJx1dCp6ssWm1PVTzVQLLrmc",
+        key: "AIzaSyA1-JTQ3c3g7LKC0-HMgCE3Wq7qFLqm7KU",
         q: this.state.searchValue,
         resultsPerPage: this.state.data?.pageInfo.resultsPerPage,
       },
@@ -53,8 +53,6 @@ class Videos extends Component {
             <div className="search-container">
               <p className="song-title">{video.snippet.title}</p>
               <iframe
-                width="560"
-                height="315"
                 src={preUrl + video.id.videoId}
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
