@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./Videos.css";
+import Comments from "./Comments";
 console.log(process.env.REACT_APP_API_KEY);
 
 class Videos extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Search.css";
 import axios from "axios";
-
+import Comments from "./Comments.js";
 class Search extends Component {
   state = {
     searchValue: "",
@@ -51,6 +51,7 @@ class Search extends Component {
     // this.state.data?.data[i].preview
     let arr = [];
     arr = this.state.data?.data.map(function (song) {
+      console.log(song);
       return (
         <div className="search-container">
           <p className="song-title">
@@ -68,6 +69,7 @@ class Search extends Component {
               Click Here For Full Track
             </a>
           </div>
+          <Comments {...song} />
         </div>
       );
     });

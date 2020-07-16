@@ -30,6 +30,45 @@ body {
   color: #61dafb;
 }
 
+#submit {
+  padding: 12px 10px;
+  width: 80%;
+  border-radius: 4px;
+  background-color: #4286f4;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 10px 0px;
+  margin-right: 10%;
+  border: 1px solid #000;
+}
+#comment-button {
+  padding: 12px 10px;
+  width: 80%;
+  border-radius: 4px;
+  background-color: #4286f4;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 10px 0px;
+  margin-left: 20%;
+}
+.comment {
+  background-color: #ccc;
+  padding: 10px;
+  border: 1px solid #000;
+  text-align: center;
+}
+.commentContainer {
+  margin-left: 20%;
+  margin-bottom: 10px;
+}
+.comments-form {
+  margin-left: 25%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

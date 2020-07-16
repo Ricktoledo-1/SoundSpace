@@ -4,7 +4,6 @@ import Search from "./components/Search";
 import Random from "./components/random";
 import Header from "./components/header";
 import { BrowserRouter as Router } from "react-router-dom";
-import gif1 from "./components/images/musicAPI2.gif";
 import Artists from "./components/Artists";
 import Videos from "./components/Videos";
 
@@ -40,9 +39,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-      {/* <img src ={gif1} alt ="sunny beach"/>  */}
-        
-       <Header />
+        {/* <img src ={gif1} alt ="sunny beach"/>  */}
+
+        <Header />
         <header className="App-header">
           <span>Sound Space</span>
         </header>
