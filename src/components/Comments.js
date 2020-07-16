@@ -56,13 +56,13 @@ class Comments extends Component {
           New Comment
         </button>
         {this.state.show ? (
-          <>
+          <React.Fragment>
             <form className="comments-form" onSubmit={this.handleSubmit}>
               <input type="text" onChange={this.handleChange}></input>
               <input id="submit" type="submit"></input>
             </form>
             {this.showComments()}
-          </>
+          </React.Fragment>
         ) : null}
       </div>
     );
